@@ -12,7 +12,7 @@ const db=require('./config/keys').mongoURI;
 const routerUser =require('./routes/api/user');
 const routerProfile =require('./routes/api/profile');
 const routerPost =require('./routes/api/Post');
-mongoose.connect(db,{ useUnifiedTopology: true,useNewUrlParser: true })
+mongoose.connect('mongodb://localhost:27017/devconnector',{ useUnifiedTopology: true,useNewUrlParser: true })
         .then(console.log('Database connected successfully'))
         .catch(err =>console.log(err));
 app.use(passport.initialize())
